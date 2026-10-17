@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniVerse — Comics & PlayStation 5 Retail Hub</title>
+  <meta name="description" content="The premier cyber-console storefront uniting serialized digital comics, manga, and PlayStation 5 games and hardware gear.">
+  
+  <!-- Favicon and Theme Color -->
+  <meta name="theme-color" content="#080B14">
+
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Grid & Halftone Background Layers -->
+  <div class="ambient-grid"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-wrap">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9NsVDDXXTnODTpVvC9bj2n0-RcxO26NdaoJd8dV-0NWNxd2Hluv5MXYIBrxApSdCGXG3H7uDxyFx7dIyaK9rKWRevZuoZLbuSmgv1-tH8TtI2IOkDZpkRq9umA6p6LSi3vMpK1SUMLsPia58qPA6r4nGVSOJhJfDHjnGh90KhNF-N7UwnUfVmegUH3Zhkevyi36qXSNDGdp2kgBN1Imh5a-9On1YiRB7pt4U72Qaw9iOp-mvKWluu" alt="OmniVerse Logo" class="brand-logo-img">
+        <span class="brand-text">Omni<span>Verse</span></span>
+      </a>
+
+      <!-- Live Search Box with Sector Filter -->
+      <div class="search-container">
+        <div class="search-box">
+          <select class="search-sector-select" id="searchSectorSelect" aria-label="Sector select">
+            <option value="all">All Sectors</option>
+            <option value="comics">E-Comics</option>
+            <option value="manga">Manga</option>
+            <option value="games">PS5 Games</option>
+            <option value="gear">PS5 Gear</option>
+            <option value="bundles">Bundles</option>
+          </select>
+          <div class="search-input-wrap">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" id="siteSearchInput" class="search-input" placeholder="Search graphic novels, DualSense, collector discs..." autocomplete="off">
+          </div>
+          <button class="search-btn" id="siteSearchBtn" type="button">
+            <span class="material-symbols-outlined" style="font-size: 1rem;">bolt</span> Find
+          </button>
+        </div>
+
+        <!-- Live Instant Results Dropdown -->
+        <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+      </div>
+
+      <!-- Desktop Primary Nav -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="#comics" class="nav-link active">E-Comics & Manga</a>
+        <a href="#games" class="nav-link">PS5 Games</a>
+        <a href="#gear" class="nav-link">Gear & Peripherals</a>
+        <a href="#bundles" class="nav-link">Cross-Over Bundles</a>
+        <a href="#omnipass" class="nav-link">OmniPass VIP</a>
+      </nav>
+
+      <!-- Right Action Group -->
+      <div class="header-actions">
+        
+        <!-- Audio Synth Feedback Toggle -->
+        <button class="action-btn sound-toggle-btn" id="soundToggleBtn" title="Toggle Console Sound FX" aria-label="Sound Toggle">
+          <span class="material-symbols-outlined">volume_up</span>
+        </button>
+
+        <!-- Wishlist Trigger -->
+        <button class="action-btn" id="wishlistBtn" title="VIP Wishlist" aria-label="Wishlist">
+          <span class="material-symbols-outlined">favorite</span>
+          <span class="badge-count" id="wishlistCountBadge">2</span>
+        </button>
+
+        <!-- Cart Dock Trigger -->
+        <button class="action-btn" id="openCartBtn" title="Console Dock" aria-label="Shopping Cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="badge-count" id="cartCountBadge">3</span>
+        </button>
+
+        <!-- User Telemetry Badge -->
+        <div class="user-telemetry-badge">
+          <div class="user-meta-text">
+            <span class="user-rank" id="userRankDisplay">LVL 48 • VIP</span>
+            <span class="user-points" id="userPointsDisplay">1,420 PTS</span>
+          </div>
+          <div class="user-avatar-wrap" title="Agent Profile">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW6k0rS8bj2boiZTng2VfgbaQXbzSBXWyXBDurkowYNuSssdJ7r8DAdsRthWD7brWoHWGtR3tQU_EJtLuD-6jdVb4brPmfAcrumPyI-kv09QcaLShcwBUqg9wm3pPU7Y3w-Hz-PM_UFnsEiXtJDksKFoQZ0CgnzjFm_nO0BR9hkW39ly451RHeogXDCgJYvM0KJIKhAvM3c3d9B7PB4g_u23ODUd8YJwjaHBmKkVvA3mDwsgRuIbgO" alt="Profile" class="user-avatar-img">
+            <span class="user-status-dot"></span>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="action-btn mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu Toggle">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-menu" id="mobileNavMenu">
+    <a href="#comics" class="nav-link">E-Comics & Manga</a>
+    <a href="#games" class="nav-link">PS5 Games</a>
+    <a href="#gear" class="nav-link">Gear & Accessories</a>
+    <a href="#bundles" class="nav-link">Cross-Over Bundles</a>
+    <a href="#omnipass" class="nav-link">OmniPass VIP</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION: SYNERGY DROP SPOTLIGHT
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="ambient-glow-cyan hero-aura-1"></div>
+      <div class="ambient-glow-crimson hero-aura-2"></div>
+
+      <div class="container">
+        
+        <!-- Top Ticker / Meta Signal -->
+        <div class="hero-ticker-wrap">
+          <div class="ticker-pill">
+            <span class="pulsing-indicator"></span>
+            <span class="badge-caps" style="color: var(--tertiary); padding: 0;">SECTOR DROP // SEASON 04 EXCLUSIVE</span>
+          </div>
+          <div class="ticker-telemetry">
+            <span><span class="material-symbols-outlined" style="font-size: 0.9rem; color: var(--primary-light);">sync</span> DUAL-SYNC LATENCY: 0.14MS</span>
+            <span class="divider">|</span>
+            <span><span class="material-symbols-outlined" style="font-size: 0.9rem; color: var(--secondary);">verified</span> PSN KEY DIRECT DISPATCH</span>
+          </div>
+        </div>
+
+        <!-- Main Showcase Grid -->
+        <div class="hero-grid">
+          
+          <!-- Left: Narrative & Headline -->
+          <div class="hero-left">
+            <div class="hero-tag-strip">
+              <span class="badge-caps badge-secondary badge-skew"><span>CROSS-MEDIA VAULT</span></span>
+              <span class="badge-caps badge-outline">PS5 + DIGITAL RUN</span>
+            </div>
+
+            <h1 class="hero-title">
+              WHERE COMIC LORE MEETS <span class="gradient-text-ps">PLAYSTATION</span> POWER.
+            </h1>
+
+            <p class="hero-lead">
+              Plug straight into serialized narrative universes. Buy the digital graphic novel prequel, unlock the exclusive PS5 day-one campaign skin, and wield custom-forged DualSense gear in one synchronized package.
+            </p>
+
+            <!-- Premier Synergy Pack Feature Card -->
+            <div class="hero-synergy-card" data-product-id="neon-ronin">
+              <div class="synergy-card-left">
+                <div class="synergy-card-thumb">
+                  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl-rX8iu0ZwhTu595-LjIGnUXLicX5_-uzKlzcxe8eMwNCXitzDmRZTIzY_03onoG2p4Fg9xY_UNYayGr8BEL_SwlYpkgnoPi1OzubOZb6lts8CQAKOqGpdYJKfrke2iJL50OnIIc4TkK6ZHfxAnB5eFJTUKk_WCFBuStg8V5h-Wqn_vjL-4ueZ82v0EKhGxUem1CFCK4OfT4hk-8e3jG6A2Ql4By3SnRWRKIYbRVFaqyZ7W5VL5HY" alt="Neon Ronin Cover">
+                  <span class="badge-sub">#01-06</span>
+                </div>
+                <div class="synergy-card-details">
+                  <span class="synergy-card-label">CURRENT PREMIER SYNERGY PACK</span>
+                  <h3 class="synergy-card-title">Neon Ronin: Zero Hour Complete</h3>
+                  <span class="synergy-card-sub">Includes 6-Issue Run + PS5 Game Code + Neon DualSense Decal</span>
+                </div>
+              </div>
+              <div class="synergy-card-price-wrap">
+                <div>
+                  <span class="price-current">$79.99</span>
+                  <span class="price-old">$114.99</span>
+                </div>
+                <span class="discount-pill">SAVE 30% BUNDLE</span>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="hero-cta-group">
+              <button class="btn btn-primary" onclick="addToCart('neon-ronin', 'Neon Ronin: Zero Hour Complete', 'Synergy Pack', 79.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCl-rX8iu0ZwhTu595-LjIGnUXLicX5_-uzKlzcxe8eMwNCXitzDmRZTIzY_03onoG2p4Fg9xY_UNYayGr8BEL_SwlYpkgnoPi1OzubOZb6lts8CQAKOqGpdYJKfrke2iJL50OnIIc4TkK6ZHfxAnB5eFJTUKk_WCFBuStg8V5h-Wqn_vjL-4ueZ82v0EKhGxUem1CFCK4OfT4hk-8e3jG6A2Ql4By3SnRWRKIYbRVFaqyZ7W5VL5HY')">
+                <span class="material-symbols-outlined">sports_esports</span>
+                <span>Shop The Synergy Drop</span>
+              </button>
+              <button class="btn btn-ghost open-reader-btn" data-comic="Neon Ronin: Zero Hour Complete (Preview)">
+                <span class="material-symbols-outlined" style="color: var(--secondary);">menu_book</span>
+                <span>Free 12-Page Preview</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right: Asymmetric Console & Comic Artifact Display -->
+          <div class="hero-right">
+            <div class="artifact-showcase-box">
+              <div class="ambient-halftone"></div>
+              
+              <div class="artifact-top-bar">
+                <span class="badge-caps badge-outline">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem; color: var(--primary-light);">gamepad</span> PS5 EXCLUSIVE RIG
+                </span>
+                <span class="badge-caps badge-tertiary">MINT FIRST PRINT</span>
+              </div>
+
+              <div class="artifact-image-container">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0RWwY3x9HcCXhRYPX-bO5jdLpxpu8pF3WSnjeXz0FgpQ5LA0gj4CwIu9OLHZKRYR6mmlKLjrc_zVXYgXqKybE2rc1Og8V-jIiD_gYdXPeC1vFLSb2jE7kv3wYeg0p_fXx46RG3XXfw5mManfRL0n4tnh0w7eQfer9kmbCNYlOsUJMyXR5EXgIOTdypZfJr9WKdoFwGZs5V3YZat6CWtv5MArqevvFogBOg0U0q_DbfCjTowT8RpKM" alt="PS5 DualSense Comic Graphic Mod" class="artifact-main-img">
+              </div>
+
+              <div class="artifact-spec-plate">
+                <div>
+                  <div class="spec-title">CHASSIS SPECIFICATION</div>
+                  <div class="spec-val">Haptic Comic Resonance Mod</div>
+                </div>
+                <span class="stock-tag">IN STOCK</span>
+              </div>
+
+              <div class="artifact-footer-telemetry">
+                <span><span class="material-symbols-outlined" style="font-size: 0.9rem; color: var(--secondary);">flash_on</span> Zero Latency Code Dispenser</span>
+                <span class="badge-caps" style="color: var(--text-muted); padding: 0;">EDITION 001 // 500 COPIES</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 4-Stat Telemetry Strip -->
+        <div class="hero-stats-row">
+          <div class="stat-card">
+            <div class="stat-icon-box"><span class="material-symbols-outlined">auto_stories</span></div>
+            <div>
+              <div class="stat-number">50K+</div>
+              <div class="stat-label">Digital Comics & Manga</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-box crimson"><span class="material-symbols-outlined">bolt</span></div>
+            <div>
+              <div class="stat-number">0.0 SEC</div>
+              <div class="stat-label">Instant PSN Key Telemetry</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-box amber"><span class="material-symbols-outlined">verified_user</span></div>
+            <div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Licensed PlayStation Gear</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-box"><span class="material-symbols-outlined">local_shipping</span></div>
+            <div>
+              <div class="stat-number">MINT-PACK</div>
+              <div class="stat-label">Armored 2-Day Shipping</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VAULT QUICK-PILLS / ROCKER SELECTOR BAR (STICKY)
+         ========================================================================== -->
+    <nav class="vault-filter-bar" aria-label="Vault Filters">
+      <div class="container">
+        <div class="filter-pills-row">
+          <span class="filter-tag-label">
+            <span class="material-symbols-outlined" style="font-size: 1rem;">tune</span> VAULT FILTER:
+          </span>
+          <button class="filter-pill active" data-filter="all">
+            <span class="material-symbols-outlined" style="font-size: 0.9rem;">stars</span> All Highlights
+          </button>
+          <button class="filter-pill" data-filter="comics">
+            <span class="material-symbols-outlined" style="font-size: 0.9rem; color: var(--secondary);">auto_stories</span> Weekly Comic Drops
+          </button>
+          <button class="filter-pill" data-filter="games">
+            <span class="material-symbols-outlined" style="font-size: 0.9rem; color: var(--primary-light);">sports_esports</span> PS5 Disc & Digital Games
+          </button>
+          <button class="filter-pill" data-filter="gear">
+            <span class="material-symbols-outlined" style="font-size: 0.9rem; color: var(--tertiary);">gamepad</span> DualSense™ & Controllers
+          </button>
+          <button class="filter-pill" data-filter="gear">
+            <span class="material-symbols-outlined" style="font-size: 0.9rem;">headphones</span> Headsets & Audio
+          </button>
+          <button class="filter-pill" data-filter="comics">
+            <span class="material-symbols-outlined" style="font-size: 0.9rem;">book_5</span> Manga & Graphic Novels
+          </button>
+          <button class="filter-pill" data-filter="bundles">
+            <span class="material-symbols-outlined" style="font-size: 0.9rem; color: var(--secondary);">layers</span> Crossover Collector Sets
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==========================================================================
+         SECTION 1: TRENDING DIGITAL COMICS & MANGA
+         ========================================================================== -->
+    <section class="section-wrapper" id="comics">
+      <div class="container">
+        
+        <div class="section-header">
+          <div>
+            <div class="section-tagline secondary">
+              <span class="material-symbols-outlined" style="font-size: 1rem;">import_contacts</span> NEW ISSUE BROADCAST
+            </div>
+            <h2 class="section-title">Trending Digital Comics & Manga</h2>
+            <p class="section-desc">
+              Ultra-high-res panel flow, synchronized across your iPad, browser, and PlayStation 5 companion dashboard.
+            </p>
+          </div>
+          <a href="#comics" class="section-link-all">
+            View All 1,420 Releases <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Comic Cards Grid -->
+        <div class="comic-grid">
+          
+          <!-- Comic 1: Void Genesis -->
+          <article class="comic-card" data-sector="comics" data-product-id="void-genesis">
+            <div class="comic-cover-wrap">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT04FeQmvUO70RwX-xuclpmF8e2453a7ZYXZGQXKx3Er_iksVKkyxZ9ySE4luv3OZpWLAewcpwUmYtv5H65cRZUvAfze5_vzQCpJoO41u8sGsOjilgMJaPg0sKypLvZtlZnvCy1tGKW5-TH-IxJ3tiVpZILr42YHVECgZeUBQ6k1Ew6SC3Ob7mgCoqeEwjQA72eLO-sRFqUXi42lz54Qy6ZtzWCHHvtXnxf0ceEkX0lQNq7uZlYhKe" alt="Void Genesis #01" class="comic-cover-img">
+              <div class="comic-badge-top-left">
+                <span class="badge-caps badge-tertiary">ISSUE #01</span>
+              </div>
+              <div class="comic-badge-top-right">
+                <span class="badge-caps badge-outline">
+                  <span class="material-symbols-outlined" style="font-size: 0.85rem; color: var(--primary-light);">play_circle</span> MOTION
+                </span>
+              </div>
+              <div class="comic-scrim-bottom">
+                <span class="badge-caps badge-secondary">FREE ON OMNIPASS</span>
+                <span class="rating-score"><span class="material-symbols-outlined" style="font-size: 0.95rem;">star</span> 4.9</span>
+              </div>
+            </div>
+            <div class="comic-info">
+              <div>
+                <span class="comic-meta-tag">CYBERPUNK SCI-FI • 68 PGS</span>
+                <h3 class="comic-title">Void Genesis: Dawn Breach</h3>
+                <p class="comic-synopsis">
+                  Before the orbital colony went dark, Sector 9 operative Kael tapped an illegal psionic data tap.
+                </p>
+              </div>
+              <div class="card-action-bar">
+                <div class="card-price-group">
+                  <div class="price">$3.99</div>
+                  <div class="sub">Instant DL</div>
+                </div>
+                <div class="card-btn-group">
+                  <button class="btn-icon open-reader-btn" data-comic="Void Genesis: Dawn Breach #01" title="Preview Pages">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="btn btn-primary" onclick="addToCart('void-genesis', 'Void Genesis: Dawn Breach #01', 'Digital Comic', 3.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCT04FeQmvUO70RwX-xuclpmF8e2453a7ZYXZGQXKx3Er_iksVKkyxZ9ySE4luv3OZpWLAewcpwUmYtv5H65cRZUvAfze5_vzQCpJoO41u8sGsOjilgMJaPg0sKypLvZtlZnvCy1tGKW5-TH-IxJ3tiVpZILr42YHVECgZeUBQ6k1Ew6SC3Ob7mgCoqeEwjQA72eLO-sRFqUXi42lz54Qy6ZtzWCHHvtXnxf0ceEkX0lQNq7uZlYhKe')">
+                    <span class="material-symbols-outlined" style="font-size: 1rem;">shopping_cart</span> Buy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Comic 2: Shinobi Protocol -->
+          <article class="comic-card" data-sector="comics" data-product-id="shinobi-protocol">
+            <div class="comic-cover-wrap">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWoBhUgORdeINVTba40cRGEcxnT47VfPxW40OtTfYBtAOlCsVZewML-Vbr1Z4YRacd6EknN3Hh5G8wjOyBlFjjlIhhC21OaL-PN1iMx9sPLCGp7BZRH9InlDlVtRpPfBgBNTGjcyooi5ZTrbd9wVWXQNtUNhfsUEw4WLMppNM4nE4mg9HhAa63Fu9udkWexFXHQ76extxEyOtAGvHlNlkJxEtvF9zuvt2QFp-GT5cmEX6wiz7437sw" alt="Shinobi Protocol: Tokyo 2099" class="comic-cover-img">
+              <div class="comic-badge-top-left">
+                <span class="badge-caps badge-secondary">MANGA VOL. 3</span>
+              </div>
+              <div class="comic-badge-top-right">
+                <span class="badge-caps badge-outline">
+                  <span class="material-symbols-outlined" style="font-size: 0.85rem;">auto_stories</span> RTL READ
+                </span>
+              </div>
+              <div class="comic-scrim-bottom">
+                <span class="badge-caps badge-outline">NEW CHAPTER DROP</span>
+                <span class="rating-score"><span class="material-symbols-outlined" style="font-size: 0.95rem;">star</span> 5.0</span>
+              </div>
+            </div>
+            <div class="comic-info">
+              <div>
+                <span class="comic-meta-tag">DARK FANTASY • 180 PGS</span>
+                <h3 class="comic-title">Shinobi Protocol: Tokyo 2099</h3>
+                <p class="comic-synopsis">
+                  The Shogunate corporation has deployed bio-mechanical specters across Shinjuku alleyways.
+                </p>
+              </div>
+              <div class="card-action-bar">
+                <div class="card-price-group">
+                  <div class="price">$7.99</div>
+                  <div class="sub">Tankobon Scan</div>
+                </div>
+                <div class="card-btn-group">
+                  <button class="btn-icon open-reader-btn" data-comic="Shinobi Protocol: Tokyo 2099 Vol. 3" title="Preview Pages">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="btn btn-primary" onclick="addToCart('shinobi-protocol', 'Shinobi Protocol: Tokyo 2099', 'Digital Manga', 7.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWoBhUgORdeINVTba40cRGEcxnT47VfPxW40OtTfYBtAOlCsVZewML-Vbr1Z4YRacd6EknN3Hh5G8wjOyBlFjjlIhhC21OaL-PN1iMx9sPLCGp7BZRH9InlDlVtRpPfBgBNTGjcyooi5ZTrbd9wVWXQNtUNhfsUEw4WLMppNM4nE4mg9HhAa63Fu9udkWexFXHQ76extxEyOtAGvHlNlkJxEtvF9zuvt2QFp-GT5cmEX6wiz7437sw')">
+                    <span class="material-symbols-outlined" style="font-size: 1rem;">shopping_cart</span> Buy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Comic 3: Aegis Knight -->
+          <article class="comic-card" data-sector="comics" data-product-id="aegis-knight">
+            <div class="comic-cover-wrap">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR6gJxvNjNeyzEuwkdWeNfB-E7cOsanDnJWl65EwEFKmrRfqSoMDryNT03gqvibPXzO3ixKNtnwkzaLU0ZBMoXXjrOhcv7xmmhffSqkFJE393YRRHwqbe7jK6WMoPVDAaAxQ4-6VtO3H_iWQmRfpd_5aJCp2h4MUHuxTgNY0WZ7TDwb_yElPKi6iSpXKamH3EsmMj9J8pPwZCrcGfPVSQYRgREIQLI-ixKztIrZGkqIAtn6jkHZLUX" alt="Aegis Knight: Fall of Olympus" class="comic-cover-img">
+              <div class="comic-badge-top-left">
+                <span class="badge-caps badge-tertiary">ISSUE #04</span>
+              </div>
+              <div class="comic-badge-top-right">
+                <span class="badge-caps badge-secondary">
+                  <span class="material-symbols-outlined" style="font-size: 0.85rem;">local_fire_department</span> CLIMAX
+                </span>
+              </div>
+              <div class="comic-scrim-bottom">
+                <span class="badge-caps badge-secondary">FREE ON OMNIPASS</span>
+                <span class="rating-score"><span class="material-symbols-outlined" style="font-size: 0.95rem;">star</span> 4.8</span>
+              </div>
+            </div>
+            <div class="comic-info">
+              <div>
+                <span class="comic-meta-tag">HEROIC ACTION • 42 PGS</span>
+                <h3 class="comic-title">Aegis Knight: Fall of Olympus</h3>
+                <p class="comic-synopsis">
+                  The pantheon falls. Sovereign forces breach the citadel gates in the penultimate war issue.
+                </p>
+              </div>
+              <div class="card-action-bar">
+                <div class="card-price-group">
+                  <div class="price">$4.99</div>
+                  <div class="sub">PDF + CBR + Sync</div>
+                </div>
+                <div class="card-btn-group">
+                  <button class="btn-icon open-reader-btn" data-comic="Aegis Knight: Fall of Olympus #04" title="Preview Pages">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="btn btn-primary" onclick="addToCart('aegis-knight', 'Aegis Knight: Fall of Olympus #04', 'Digital Comic', 4.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCR6gJxvNjNeyzEuwkdWeNfB-E7cOsanDnJWl65EwEFKmrRfqSoMDryNT03gqvibPXzO3ixKNtnwkzaLU0ZBMoXXjrOhcv7xmmhffSqkFJE393YRRHwqbe7jK6WMoPVDAaAxQ4-6VtO3H_iWQmRfpd_5aJCp2h4MUHuxTgNY0WZ7TDwb_yElPKi6iSpXKamH3EsmMj9J8pPwZCrcGfPVSQYRgREIQLI-ixKztIrZGkqIAtn6jkHZLUX')">
+                    <span class="material-symbols-outlined" style="font-size: 1rem;">shopping_cart</span> Buy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Comic 4: Star-Drifter -->
+          <article class="comic-card" data-sector="comics" data-product-id="star-drifter">
+            <div class="comic-cover-wrap">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmjG2sXttmGAHx2D89v6WMoAZVENq4P10wXWdz0zcSXACKeaBQnyK3ebq_EpPl0VPNKU40aK6vszGjBinw_DZvAlFU6Cn56KiG_mk8iQVSlO1BQs7a0dB_C45uG4hDNXwKcODER5BqzHPq7ln9PA5fk_7pAtLh0egWhpSvNXs_APY_ICIlumc-R0KpjW1aZJTs6coNBUJyxjxxUV29N8oVXJsu9Tgw6lK-UFq2GkgZQXErIfK_SRlx" alt="Star-Drifter" class="comic-cover-img">
+              <div class="comic-badge-top-left">
+                <span class="badge-caps badge-primary">COMPLETE NOVEL</span>
+              </div>
+              <div class="comic-badge-top-right">
+                <span class="badge-caps badge-outline">
+                  <span class="material-symbols-outlined" style="font-size: 0.85rem; color: var(--tertiary);">military_tech</span> AWARD WINNER
+                </span>
+              </div>
+              <div class="comic-scrim-bottom">
+                <span class="badge-caps badge-outline">DIRECTOR'S CUT</span>
+                <span class="rating-score"><span class="material-symbols-outlined" style="font-size: 0.95rem;">star</span> 4.9</span>
+              </div>
+            </div>
+            <div class="comic-info">
+              <div>
+                <span class="comic-meta-tag">INDIE GRAPHIC NOVEL • 210 PGS</span>
+                <h3 class="comic-title">Star-Drifter: Black Hole Run</h3>
+                <p class="comic-synopsis">
+                  Winner of Best Sci-Fi Narrative 2024. A relentless solo flight beyond the galactic perimeter.
+                </p>
+              </div>
+              <div class="card-action-bar">
+                <div class="card-price-group">
+                  <div class="price">$9.99</div>
+                  <div class="sub">Includes Artbook</div>
+                </div>
+                <div class="card-btn-group">
+                  <button class="btn-icon open-reader-btn" data-comic="Star-Drifter: Black Hole Run" title="Preview Pages">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="btn btn-primary" onclick="addToCart('star-drifter', 'Star-Drifter: Black Hole Run', 'Graphic Novel', 9.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCmjG2sXttmGAHx2D89v6WMoAZVENq4P10wXWdz0zcSXACKeaBQnyK3ebq_EpPl0VPNKU40aK6vszGjBinw_DZvAlFU6Cn56KiG_mk8iQVSlO1BQs7a0dB_C45uG4hDNXwKcODER5BqzHPq7ln9PA5fk_7pAtLh0egWhpSvNXs_APY_ICIlumc-R0KpjW1aZJTs6coNBUJyxjxxUV29N8oVXJsu9Tgw6lK-UFq2GkgZQXErIfK_SRlx')">
+                    <span class="material-symbols-outlined" style="font-size: 1rem;">shopping_cart</span> Buy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: PLAYSTATION 5 GAMES & BLOCKBUSTERS
+         ========================================================================== -->
+    <section class="section-wrapper bg-surface-alt" id="games">
+      <div class="container">
+        
+        <div class="section-header">
+          <div>
+            <div class="section-tagline primary">
+              <span class="material-symbols-outlined" style="font-size: 1rem;">videogame_asset</span> CONSOLE CORE DIRECTORY
+            </div>
+            <h2 class="section-title">PlayStation 5 Games & Blockbusters</h2>
+            <p class="section-desc">
+              Official digital code redemption directly to your PSN ID, or factory-sealed disc editions with exclusive comic lithographs.
+            </p>
+          </div>
+
+          <!-- Format Rocker Selector -->
+          <div class="format-toggle-rocker" aria-label="Format Selector">
+            <button class="rocker-btn active" data-format="digital">DIGITAL CODE</button>
+            <button class="rocker-btn" data-format="disc">DISC CASE</button>
+          </div>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="game-grid">
+          
+          <!-- Game 1: Wolverine -->
+          <article class="game-card" data-sector="games" data-product-id="wolverine">
+            <div>
+              <div class="game-banner-wrap">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8eBtY4Xu3O_lKJ9eLwrDndzYVjxgs_V6xHnCNBz_HcaHzS_NWXvPuKVwqcLvNC8mHLZSx5LwnxtZbT1OiE79SZkzjYf_8cn1d8BJgVSUfTfmjxwXjor4MeKCWSmW_wtJK32FIbKOFMbX5eap92uaBFQxsrdI-iNb1OA6hOt-YGVqdimOZ_FXR8AUt6cfXbEiDcvojjT94M0LftXVFkpx0sf6kDqYi3VxtpxqTt-nJ7jzV_HfGG4o" alt="Marvel's Wolverine" class="game-banner-img">
+                <div class="comic-badge-top-left">
+                  <span class="badge-caps badge-primary">PS5 EXCLUSIVE</span>
+                </div>
+                <div class="game-spec-chips">
+                  <span class="spec-chip-mini">4K 60FPS</span>
+                  <span class="spec-chip-mini">HAPTICS</span>
+                </div>
+              </div>
+              <div class="game-info">
+                <div class="game-top-meta">
+                  <span class="game-publisher" style="color: var(--secondary);">PRE-ORDER VAULT</span>
+                  <span class="metascore-tag">METASCORE --</span>
+                </div>
+                <h3 class="game-title">Marvel's Wolverine</h3>
+                <div class="game-comic-bonus">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">auto_stories</span> Includes Digital Comic Prequel Issue #00
+                </div>
+              </div>
+            </div>
+            <div class="card-action-bar" style="padding: 1.125rem; border-top: 1px solid var(--border-subtle);">
+              <div class="card-price-group">
+                <div class="price">$69.99</div>
+                <div class="sub game-delivery-meta">Direct Key Delivery</div>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart('wolverine', 'Marvel\'s Wolverine', 'PS5 Game Key', 69.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8eBtY4Xu3O_lKJ9eLwrDndzYVjxgs_V6xHnCNBz_HcaHzS_NWXvPuKVwqcLvNC8mHLZSx5LwnxtZbT1OiE79SZkzjYf_8cn1d8BJgVSUfTfmjxwXjor4MeKCWSmW_wtJK32FIbKOFMbX5eap92uaBFQxsrdI-iNb1OA6hOt-YGVqdimOZ_FXR8AUt6cfXbEiDcvojjT94M0LftXVFkpx0sf6kDqYi3VxtpxqTt-nJ7jzV_HfGG4o')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">bolt</span> Pre-Order
+              </button>
+            </div>
+          </article>
+
+          <!-- Game 2: Ghost of Yōtei -->
+          <article class="game-card" data-sector="games" data-product-id="ghost-yotei">
+            <div>
+              <div class="game-banner-wrap">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB4JtB_yIKor87hE8QA4h_gYoq2fIGIQ6D6gsuo4jaox2q_V_NmFln6fr9my8GlQC31Eb6c-PbmOq9Gt-vFXY_Abok0qCEjNb00D4CVEsVjlYm0gZblTGRV8UQXXewc4HKTKmHjZVGwcrOIKUYngnBSNsKz3hAhwCz1JjqhWQqtBxQZlDhTZw43HNgRl4UPGFcb9prCb9LFaD_73Q0vvprXGgvSjrzyeBB4ie2x_iWgIB14FZiBvHx" alt="Ghost of Yōtei" class="game-banner-img">
+                <div class="comic-badge-top-left">
+                  <span class="badge-caps badge-secondary">PS5 PRO ENHANCED</span>
+                </div>
+                <div class="game-spec-chips">
+                  <span class="spec-chip-mini">PSSR RAYTRACING</span>
+                </div>
+              </div>
+              <div class="game-info">
+                <div class="game-top-meta">
+                  <span class="game-publisher">SONY INTERACTIVE</span>
+                  <span class="metascore-tag">DAY ONE DROP</span>
+                </div>
+                <h3 class="game-title">Ghost of Yōtei</h3>
+                <div class="game-comic-bonus">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">book</span> Companion Manga by Dark Horse
+                </div>
+              </div>
+            </div>
+            <div class="card-action-bar" style="padding: 1.125rem; border-top: 1px solid var(--border-subtle);">
+              <div class="card-price-group">
+                <div class="price">$69.99</div>
+                <div class="sub game-delivery-meta">Direct Key Delivery</div>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart('ghost-yotei', 'Ghost of Yōtei', 'PS5 Game Key', 69.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCB4JtB_yIKor87hE8QA4h_gYoq2fIGIQ6D6gsuo4jaox2q_V_NmFln6fr9my8GlQC31Eb6c-PbmOq9Gt-vFXY_Abok0qCEjNb00D4CVEsVjlYm0gZblTGRV8UQXXewc4HKTKmHjZVGwcrOIKUYngnBSNsKz3hAhwCz1JjqhWQqtBxQZlDhTZw43HNgRl4UPGFcb9prCb9LFaD_73Q0vvprXGgvSjrzyeBB4ie2x_iWgIB14FZiBvHx')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">shopping_bag</span> Order
+              </button>
+            </div>
+          </article>
+
+          <!-- Game 3: Cyberpunk Trauma Bundle -->
+          <article class="game-card" data-sector="games" data-product-id="cyberpunk-trauma">
+            <div>
+              <div class="game-banner-wrap">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEoTj5kVsppkxsNkOudzbUWWehpHpldM3vkVH1hvlIiXMLvxz0yHHMOo7pMKyST0OM1uPVX9mGNcoV5wYdZubkUwT8I4N1z99wteahYidJvAChpPMbXLgebTRu9L2uKWbTVTffh7yUwz3xXmfvQRPQpOuDG4FJiO6is6Uj8p4_GjWIrk8QzhDNnwD48kLAQlE2Op1CWm-QW2ddtLROaYmjDPnU3nKIuAF2e8DbzmwL9gZ44Df5Yp2R" alt="Cyberpunk Trauma" class="game-banner-img">
+                <div class="comic-badge-top-left">
+                  <span class="badge-caps badge-tertiary">COMPLETE EDITION</span>
+                </div>
+                <div class="game-spec-chips">
+                  <span class="spec-chip-mini">EXPANSION INCLUDED</span>
+                </div>
+              </div>
+              <div class="game-info">
+                <div class="game-top-meta">
+                  <span class="game-publisher" style="color: var(--text-muted);">CD PROJEKT RED</span>
+                  <span class="metascore-tag">METASCORE 89</span>
+                </div>
+                <h3 class="game-title">Cyberpunk: Trauma Bundle</h3>
+                <div class="game-comic-bonus" style="color: var(--secondary);">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">layers</span> Includes 'Trauma Team' 4-Issue Comic
+                </div>
+              </div>
+            </div>
+            <div class="card-action-bar" style="padding: 1.125rem; border-top: 1px solid var(--border-subtle);">
+              <div class="card-price-group">
+                <div class="price">$49.99</div>
+                <div class="sub">Bundle Savings $30</div>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart('cyberpunk-trauma', 'Cyberpunk: Trauma Bundle', 'PS5 Complete Key', 49.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBEoTj5kVsppkxsNkOudzbUWWehpHpldM3vkVH1hvlIiXMLvxz0yHHMOo7pMKyST0OM1uPVX9mGNcoV5wYdZubkUwT8I4N1z99wteahYidJvAChpPMbXLgebTRu9L2uKWbTVTffh7yUwz3xXmfvQRPQpOuDG4FJiO6is6Uj8p4_GjWIrk8QzhDNnwD48kLAQlE2Op1CWm-QW2ddtLROaYmjDPnU3nKIuAF2e8DbzmwL9gZ44Df5Yp2R')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">bolt</span> Buy Key
+              </button>
+            </div>
+          </article>
+
+          <!-- Game 4: Spider-Man 2 -->
+          <article class="game-card" data-sector="games" data-product-id="spiderman-2">
+            <div>
+              <div class="game-banner-wrap">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVUxBBpUXrCEw7TWdp3ckJJXtQ8FZDPqTZFyuIEcJ-RLk3WxC2pEw4rluBszEUOqfejJH3jwLe8X0xcaVH4BbJYt5qYe6LioO1vecnDAvY4le_9YnZ3uafusUBd5QMlH-GXqXrl_7kIoI8zUovlGHwDljN88p8u9yca9x60zcWdfmknBdmZV8oMwXVj2n4_QhV-Hl_U3jjw7s8gUM4yCU-1WRhj2t8SFCI3QQsbZ_EM6siMXD8I4Pi" alt="Marvel's Spider-Man 2" class="game-banner-img">
+                <div class="comic-badge-top-left">
+                  <span class="badge-caps badge-secondary">COLLECTOR'S GRAPHIC</span>
+                </div>
+                <div class="game-spec-chips">
+                  <span class="spec-chip-mini">FAST TRAVEL SSD</span>
+                </div>
+              </div>
+              <div class="game-info">
+                <div class="game-top-meta">
+                  <span class="game-publisher" style="color: var(--text-muted);">INSOMNIAC GAMES</span>
+                  <span class="metascore-tag">METASCORE 90</span>
+                </div>
+                <h3 class="game-title">Marvel's Spider-Man 2</h3>
+                <div class="game-comic-bonus">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">palette</span> 10 Exclusive Comic-Variant Suits
+                </div>
+              </div>
+            </div>
+            <div class="card-action-bar" style="padding: 1.125rem; border-top: 1px solid var(--border-subtle);">
+              <div class="card-price-group">
+                <div class="price">$59.99</div>
+                <div class="sub game-delivery-meta">Direct Key Delivery</div>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart('spiderman-2', 'Marvel\'s Spider-Man 2', 'PS5 Digital', 59.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUxBBpUXrCEw7TWdp3ckJJXtQ8FZDPqTZFyuIEcJ-RLk3WxC2pEw4rluBszEUOqfejJH3jwLe8X0xcaVH4BbJYt5qYe6LioO1vecnDAvY4le_9YnZ3uafusUBd5QMlH-GXqXrl_7kIoI8zUovlGHwDljN88p8u9yca9x60zcWdfmknBdmZV8oMwXVj2n4_QhV-Hl_U3jjw7s8gUM4yCU-1WRhj2t8SFCI3QQsbZ_EM6siMXD8I4Pi')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">shopping_cart</span> Buy
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: OFFICIAL PS5 GEAR & HARDWARE
+         ========================================================================== -->
+    <section class="section-wrapper" id="gear">
+      <div class="container">
+        
+        <div class="section-header">
+          <div>
+            <div class="section-tagline tertiary">
+              <span class="material-symbols-outlined" style="font-size: 1rem;">settings_input_component</span> BATTLE RIG HARDWARE
+            </div>
+            <h2 class="section-title">Official PS5 Gear & Peripherals</h2>
+            <p class="section-desc">
+              High-torque thumbsticks, planar drivers, and serialized comic-etched replacement plates.
+            </p>
+          </div>
+          <div class="ticker-pill">
+            <span class="pulsing-indicator" style="background: var(--primary); box-shadow: 0 0 10px var(--primary);"></span>
+            <span class="badge-caps" style="color: var(--text-secondary); padding: 0;">Hardware Warehouse: 100% In Stock & Inspected</span>
+          </div>
+        </div>
+
+        <div class="gear-grid">
+          
+          <!-- Gear 1: DualSense Edge -->
+          <article class="gear-card" data-sector="gear" data-product-id="dualsense-edge">
+            <div>
+              <div class="gear-image-box">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-athKZrVP9xYf8H47PyEO7mGSw-SFBK8nwOh9z6w8MCDuJAmdlASvb8f1ey_8lQ6ibk6jhmV7QFSGv6CLmfttXWsN_OBKfAZ4fSCp0JBMbYFkoWhSaAGTVEKAh9Uv_74qmqnRgAJKeR9iOvq3b_8QEsIMg7PNMuU_gVTGVctpQQuty8GxcP2tjftO9583PhhitG1FgfPnGAXApRoOoepEum6pfdH8hLPH3xyNjTrCKi_2tVQqAA-9" alt="DualSense Edge Controller" class="gear-img">
+                <span class="badge-caps badge-outline gear-badge">PRO SERIES</span>
+              </div>
+              <h3 class="gear-title">DualSense Edge™ Controller</h3>
+              <p class="gear-desc">
+                Ultra-customizable controls, swappable stick caps, and mappable back paddles with tailored profile trigger stops.
+              </p>
+              <ul class="gear-bullets">
+                <li><span class="material-symbols-outlined">check_circle</span> Adjustable trigger travel</li>
+                <li><span class="material-symbols-outlined">check_circle</span> Swappable stick modules</li>
+                <li><span class="material-symbols-outlined">check_circle</span> Braided USB cable & carry case</li>
+              </ul>
+            </div>
+            <div class="card-action-bar" style="margin-top: 1.25rem;">
+              <div class="card-price-group">
+                <div class="price">$199.99</div>
+                <div class="sub">2-Year Sony Warranty</div>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart('dualsense-edge', 'DualSense Edge™ Controller', 'PS5 Hardware', 199.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuB-athKZrVP9xYf8H47PyEO7mGSw-SFBK8nwOh9z6w8MCDuJAmdlASvb8f1ey_8lQ6ibk6jhmV7QFSGv6CLmfttXWsN_OBKfAZ4fSCp0JBMbYFkoWhSaAGTVEKAh9Uv_74qmqnRgAJKeR9iOvq3b_8QEsIMg7PNMuU_gVTGVctpQQuty8GxcP2tjftO9583PhhitG1FgfPnGAXApRoOoepEum6pfdH8hLPH3xyNjTrCKi_2tVQqAA-9')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">add_shopping_cart</span> Add
+              </button>
+            </div>
+          </article>
+
+          <!-- Gear 2: Pulse Elite Headset -->
+          <article class="gear-card" data-sector="gear" data-product-id="pulse-elite">
+            <div>
+              <div class="gear-image-box">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWBctodCof7WsxvSdlSNoFgbB3WBZvBdLOTUfnhtJV_V6D0pEmdWrS0tTl8boMTpisH6XHuG2nGn2RiwTaUDxB_wq8Up317YxR5BXNZpW8qU8flI9rIk7w5X07DYPJuZJ59CZ-SqfztpAEpasqLikn9AAlSW-pmoExnH4PFpZYc9lF8hv8LmckdtskhoRaWxuZNr0fpync-o4GKPX5mg6Iuzd6Yktd0aLxBuqF2VfBqp2ayyFDvLmq" alt="Pulse Elite Headset" class="gear-img">
+                <span class="badge-caps badge-outline gear-badge">LOSSLESS AUDIO</span>
+              </div>
+              <h3 class="gear-title">Pulse Elite™ Headset</h3>
+              <p class="gear-desc">
+                Lifelike gaming audio with planar magnetic drivers and AI-enhanced noise rejection retractable microphone.
+              </p>
+              <ul class="gear-bullets">
+                <li><span class="material-symbols-outlined">check_circle</span> Planar magnetic drivers</li>
+                <li><span class="material-symbols-outlined">check_circle</span> 30-Hour battery with quick charge</li>
+                <li><span class="material-symbols-outlined">check_circle</span> PlayStation Link™ wireless</li>
+              </ul>
+            </div>
+            <div class="card-action-bar" style="margin-top: 1.25rem;">
+              <div class="card-price-group">
+                <div class="price">$149.99</div>
+                <div class="sub">Charging Hanger Included</div>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart('pulse-elite', 'Pulse Elite™ Headset', 'PS5 Audio', 149.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWBctodCof7WsxvSdlSNoFgbB3WBZvBdLOTUfnhtJV_V6D0pEmdWrS0tTl8boMTpisH6XHuG2nGn2RiwTaUDxB_wq8Up317YxR5BXNZpW8qU8flI9rIk7w5X07DYPJuZJ59CZ-SqfztpAEpasqLikn9AAlSW-pmoExnH4PFpZYc9lF8hv8LmckdtskhoRaWxuZNr0fpync-o4GKPX5mg6Iuzd6Yktd0aLxBuqF2VfBqp2ayyFDvLmq')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">add_shopping_cart</span> Add
+              </button>
+            </div>
+          </article>
+
+          <!-- Gear 3: PlayStation Portal -->
+          <article class="gear-card" data-sector="gear" data-product-id="ps-portal">
+            <div>
+              <div class="gear-image-box">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdRa_cEW4Loft98egR41KXJ5eaNoVMMXzLO8Hi5EewB21eFPcTM9qOlPqYQHtTsf13mosZ-Gm-pKWYIvLIDOxz5WMwD3q_PQ3uxq2YINBE4A1UVUl6upilWYy_Jxqhx9Wfd6A3AjIZt-JnLmq5A2VB8XRng86oX5PYILY7jgif845NuwKSGtss-TT2WLry7279g59EMWlBsTV6gMeE4zPihDYgFIfdh2wqCXq9QgCN_1_y8XopnRpV" alt="PlayStation Portal" class="gear-img">
+                <span class="badge-caps badge-secondary gear-badge">HOT RESTOCK</span>
+              </div>
+              <h3 class="gear-title">PlayStation Portal™ Player</h3>
+              <p class="gear-desc">
+                Play your PS5 console over home Wi-Fi with console-quality controls and stunning 8-inch 1080p 60FPS display.
+              </p>
+              <ul class="gear-bullets">
+                <li><span class="material-symbols-outlined">check_circle</span> Full DualSense haptic feedback</li>
+                <li><span class="material-symbols-outlined">check_circle</span> 8-Inch Full HD LCD screen</li>
+                <li><span class="material-symbols-outlined">check_circle</span> OmniPass Remote Reader compatible</li>
+              </ul>
+            </div>
+            <div class="card-action-bar" style="margin-top: 1.25rem;">
+              <div class="card-price-group">
+                <div class="price">$199.99</div>
+                <div class="sub">Limit 1 Per Household</div>
+              </div>
+              <button class="btn btn-secondary" onclick="addToCart('ps-portal', 'PlayStation Portal™ Player', 'PS5 Remote Hardware', 199.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDdRa_cEW4Loft98egR41KXJ5eaNoVMMXzLO8Hi5EewB21eFPcTM9qOlPqYQHtTsf13mosZ-Gm-pKWYIvLIDOxz5WMwD3q_PQ3uxq2YINBE4A1UVUl6upilWYy_Jxqhx9Wfd6A3AjIZt-JnLmq5A2VB8XRng86oX5PYILY7jgif845NuwKSGtss-TT2WLry7279g59EMWlBsTV6gMeE4zPihDYgFIfdh2wqCXq9QgCN_1_y8XopnRpV')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">bolt</span> Claim
+              </button>
+            </div>
+          </article>
+
+          <!-- Gear 4: Laser-Etched Plates -->
+          <article class="gear-card" data-sector="gear" data-product-id="laser-plates">
+            <div>
+              <div class="gear-image-box">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw4nTr80FbtHXg1YC_yHFb7ikDlHhdCzJkTB284wif082pIO177mn9tgciYCET3eXX1PiER5RAFHNeJGDGxtkyM73o0GYqI6xUBsX2fBKqXrOU_ckXqdsql0pR4jp9e9sMo7byypOEOoiQTFSZtN8yjSkC2D6BpQwsQdXAv35w_4c2XJeJL5wI5H8RhtU33JGAq4D6bWyDhyi-1S05MCmy5qPA3U39xiwLn58O4hcH90V3venj56rH" alt="Laser-Etched Comic Plates" class="gear-img">
+                <span class="badge-caps badge-tertiary gear-badge">LIMITED TO 500</span>
+              </div>
+              <h3 class="gear-title">Laser-Etched Comic Plates</h3>
+              <p class="gear-desc">
+                OmniVerse exclusive matte ABS replacement panels featuring serialized high-contrast line work and comic storyboard panels.
+              </p>
+              <ul class="gear-bullets">
+                <li><span class="material-symbols-outlined">check_circle</span> Fits PS5 Slim & Original disc/digital</li>
+                <li><span class="material-symbols-outlined">check_circle</span> Serialized numbered certificate</li>
+                <li><span class="material-symbols-outlined">check_circle</span> Scratch-resistant ceramic coat</li>
+              </ul>
+            </div>
+            <div class="card-action-bar" style="margin-top: 1.25rem;">
+              <div class="card-price-group">
+                <div class="price">$64.99</div>
+                <div class="sub" style="color: var(--secondary); font-weight: 700;">Only 42 Left</div>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart('laser-plates', 'Laser-Etched Comic PS5 Plates', 'PS5 Accessories', 64.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAw4nTr80FbtHXg1YC_yHFb7ikDlHhdCzJkTB284wif082pIO177mn9tgciYCET3eXX1PiER5RAFHNeJGDGxtkyM73o0GYqI6xUBsX2fBKqXrOU_ckXqdsql0pR4jp9e9sMo7byypOEOoiQTFSZtN8yjSkC2D6BpQwsQdXAv35w_4c2XJeJL5wI5H8RhtU33JGAq4D6bWyDhyi-1S05MCmy5qPA3U39xiwLn58O4hcH90V3venj56rH')">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">add_shopping_cart</span> Add
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: CROSS-OVER SYNERGY BUNDLES
+         ========================================================================== -->
+    <section class="section-wrapper bg-surface-alt" id="bundles">
+      <div class="container">
+        
+        <div class="section-header">
+          <div>
+            <div class="section-tagline secondary">
+              <span class="material-symbols-outlined" style="font-size: 1rem;">merge_type</span> ULTIMATE SYNERGY PACKS
+            </div>
+            <h2 class="section-title">Bundled Narrative Experiences</h2>
+            <p class="section-desc">
+              Unite the game, the omnibus graphic novel, and rare cosmetic skins into one cohesive dispatch.
+            </p>
+          </div>
+        </div>
+
+        <div class="bundle-grid">
+          
+          <!-- Bundle 1: Dark Knight -->
+          <article class="bundle-card" data-sector="bundles" data-product-id="dark-knight-bundle">
+            <div class="bundle-thumb-wrap">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoUQwq1xMw2r9j1AV-cEbrcu-nx13WjioZy80yk6RgjSUj-qwBTq5JzL-S6WUaZoICLoKb4qZSMCvFeUqv2Wkr1bpeSApmnDWapl4E0qUGcR03Ih1Q21Rms7jTeTEuNf75BWwp3Q9C0zeyzfb49tW-qcVsjem_lAw5CgXAvGItzCgx9xjAk3Fd4hLxJ-k_n6bnsGdIYxB1vOy_bNdWPanYzj9mP1e0ncHwpsZRC5yEtplzRapJXHZi" alt="Dark Knight Protocol Pack" class="bundle-thumb-img">
+              <span class="badge-caps badge-secondary" style="position: absolute; top: 0.5rem; left: 0.5rem;">25% OFF VALUE</span>
+            </div>
+            <div class="bundle-info">
+              <div>
+                <span class="bundle-tagline">TRI-MEDIA OMNI PACK</span>
+                <h3 class="bundle-title">The Dark Knight Protocol Pack</h3>
+                <p class="bundle-desc">
+                  Unite the game and the graphic novel. Includes Gotham Knights PS5 Digital Key, the complete 12-issue omnibus run in dynamic panel flow, and the OmniVerse-exclusive Shadow-Weave in-game skin.
+                </p>
+                <div class="bundle-pill-list">
+                  <span class="bundle-chip">PS5 GAME CODE</span>
+                  <span class="bundle-chip">12-ISSUE OMNIBUS</span>
+                  <span class="bundle-chip">EXCLUSIVE SKIN</span>
+                </div>
+              </div>
+              <div class="card-action-bar" style="margin-top: 1rem;">
+                <div>
+                  <div class="price-current">$89.99 <span class="price-old">$120.00</span></div>
+                  <span class="badge-caps" style="color: var(--primary-light); padding: 0;">Immediate PSN + Reader Access</span>
+                </div>
+                <button class="btn btn-primary" onclick="addToCart('dark-knight-bundle', 'The Dark Knight Protocol Pack', 'Synergy Bundle', 89.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAoUQwq1xMw2r9j1AV-cEbrcu-nx13WjioZy80yk6RgjSUj-qwBTq5JzL-S6WUaZoICLoKb4qZSMCvFeUqv2Wkr1bpeSApmnDWapl4E0qUGcR03Ih1Q21Rms7jTeTEuNf75BWwp3Q9C0zeyzfb49tW-qcVsjem_lAw5CgXAvGItzCgx9xjAk3Fd4hLxJ-k_n6bnsGdIYxB1vOy_bNdWPanYzj9mP1e0ncHwpsZRC5yEtplzRapJXHZi')">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">bolt</span> Acquire
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bundle 2: Galactic Mech -->
+          <article class="bundle-card" data-sector="bundles" data-product-id="mecha-assault-bundle">
+            <div class="bundle-thumb-wrap">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCjqrjlLBltrwT71cbG3PF2Qt-rRrRVd91kR3QKbxiB47Nnzaha-Ssu7vphdc4ijIxx7t4hT2WERS2rFYsqDikXF5xOQmIL2oXu9IXtDOYFFGU52urDR5Q2_ejZaxyE4e-F_8gTKcfFuRTThEFzgb764E7tDAwfA-vAstQ-JImXRhezR5CWxA2Q5TlxV6ViuXwEYxrjdf9kKD2b3xVd9WvWt68F4DV2FDNmpeYTNOsa6NqQjG8NoWq" alt="Galactic Mech Assault" class="bundle-thumb-img">
+              <span class="badge-caps badge-primary" style="position: absolute; top: 0.5rem; left: 0.5rem;">MECHA COLLECTOR</span>
+            </div>
+            <div class="bundle-info">
+              <div>
+                <span class="bundle-tagline">HARDWARE + LORE COMBO</span>
+                <h3 class="bundle-title">Galactic Mech Assault Complete</h3>
+                <p class="bundle-desc">
+                  Engage orbital war. Armored Core VI PS5 digital license paired with the 220-page full-color prequel manga, plus a premium precision-cut 3M DualSense vinyl skin.
+                </p>
+                <div class="bundle-pill-list">
+                  <span class="bundle-chip">PS5 DIGITAL EDITION</span>
+                  <span class="bundle-chip">220-PG MANGA</span>
+                  <span class="bundle-chip">VINYL DECALS</span>
+                </div>
+              </div>
+              <div class="card-action-bar" style="margin-top: 1rem;">
+                <div>
+                  <div class="price-current">$74.99 <span class="price-old">$105.00</span></div>
+                  <span class="badge-caps" style="color: var(--primary-light); padding: 0;">Skin Ships in Armored Tube</span>
+                </div>
+                <button class="btn btn-primary" onclick="addToCart('mecha-assault-bundle', 'Galactic Mech Assault Complete', 'Synergy Bundle', 74.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDCjqrjlLBltrwT71cbG3PF2Qt-rRrRVd91kR3QKbxiB47Nnzaha-Ssu7vphdc4ijIxx7t4hT2WERS2rFYsqDikXF5xOQmIL2oXu9IXtDOYFFGU52urDR5Q2_ejZaxyE4e-F_8gTKcfFuRTThEFzgb764E7tDAwfA-vAstQ-JImXRhezR5CWxA2Q5TlxV6ViuXwEYxrjdf9kKD2b3xVd9WvWt68F4DV2FDNmpeYTNOsa6NqQjG8NoWq')">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">bolt</span> Acquire
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: OMNIPASS VIP SUBSCRIPTION BANNER
+         ========================================================================== -->
+    <section class="section-wrapper" id="omnipass">
+      <div class="container">
+        <div class="omnipass-card-wrap">
+          
+          <div class="ambient-glow-crimson" style="top: -2rem; right: -2rem; opacity: 0.5;"></div>
+          <div class="ambient-glow-cyan" style="bottom: -2rem; left: -2rem; opacity: 0.5;"></div>
+
+          <div class="omnipass-grid">
+            
+            <div>
+              <div class="ticker-pill" style="margin-bottom: 1rem;">
+                <span class="material-symbols-outlined" style="font-size: 1rem; color: var(--tertiary);">stars</span>
+                <span class="badge-caps" style="color: var(--tertiary); padding: 0;">THE ALL-ACCESS PASS FOR NERDS WHO GAME & READ</span>
+              </div>
+              <h2 class="section-title">Unlock OmniPass VIP: 50,000+ Comics & Hardware Perks</h2>
+              <p class="section-desc" style="font-size: 1.05rem;">
+                One subscription unites your bookshelf and your PlayStation console. Binge the entire catalog of indie, mainstream, and manga serialized panels with 15% off any DualSense or hardware drop.
+              </p>
+
+              <div class="vip-perks-strip">
+                <div class="perk-box">
+                  <div class="perk-title pink">UNLIMITED</div>
+                  <p class="perk-desc">50,000+ digital comics & manga with offline reading.</p>
+                </div>
+                <div class="perk-box">
+                  <div class="perk-title cyan">15% SAVINGS</div>
+                  <p class="perk-desc">Storewide discount on all PS5 hardware & accessories.</p>
+                </div>
+                <div class="perk-box">
+                  <div class="perk-title amber">FREE GAME KEY</div>
+                  <p class="perk-desc">1 Full PS5 digital game included every 3 months.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Pricing Column -->
+            <div class="vip-pricing-box">
+              <span class="badge-caps badge-outline">ANNUAL OR MONTHLY ACCESS</span>
+              <div class="vip-price-display">
+                <span class="vip-amount">$9.99</span>
+                <span class="vip-period">/ month</span>
+              </div>
+              <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Cancel anytime with 1 click. Zero activation lock-in.
+              </p>
+              <button class="btn btn-secondary vip-trial-trigger" style="width: 100%; padding: 0.85rem;">
+                Start 14-Day Free Trial
+              </button>
+              <div style="font-size: 0.6875rem; color: var(--text-muted); margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem;">
+                <span class="material-symbols-outlined" style="font-size: 0.85rem; color: var(--primary-light);">verified</span> INSTANT AUTO-ACTIVATION
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6: BUILT FOR READERS & PLAYERS (FEATURES)
+         ========================================================================== -->
+    <section class="section-wrapper bg-surface-alt">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 44rem; margin: 0 auto 3rem;">
+          <div class="section-tagline primary" style="justify-content: center;">
+            ECOSYSTEM INFRASTRUCTURE
+          </div>
+          <h2 class="section-title">Engineered for Dual-Life Enthusiasts</h2>
+          <p class="section-desc" style="margin: 0.5rem auto 0;">
+            We built the architecture that bridges 300 DPI high-definition comic panels with the relentless performance of the PlayStation ecosystem.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          
+          <div class="feature-box">
+            <div class="feature-icon-box cyan">
+              <span class="material-symbols-outlined">devices</span>
+            </div>
+            <h3 style="font-size: 1.15rem;">Panel-Sync Protocol</h3>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary);">
+              Read on your tablet in the subway, then switch to your TV via the PS5 OmniReader App. Your bookmark and ambient soundtrack sync in real-time.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-box crimson">
+              <span class="material-symbols-outlined">key</span>
+            </div>
+            <h3 style="font-size: 1.15rem;">Instant PSN API Vault</h3>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary);">
+              Never wait for emailed scratch-off codes. Our direct PlayStation Network key telemetry dispatches game licenses immediately to your library.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-box amber">
+              <span class="material-symbols-outlined">shield_with_heart</span>
+            </div>
+            <h3 style="font-size: 1.15rem;">Collector-Grade Shipping</h3>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary);">
+              Physical graphic novels and limited DualSense controllers arrive wrapped in anti-static foam, bubble-corrugated sleeves, and 9.8 CGC-ready corners.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-box gray">
+              <span class="material-symbols-outlined">support_agent</span>
+            </div>
+            <h3 style="font-size: 1.15rem;">24/7 Gamer-Support Squad</h3>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary);">
+              Assistance from actual comic book historians and Platinum-trophy hunters. Rapid replacements and instantaneous digital code resets.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7: COMMUNITY BUZZ & INTERACTIVE ENGAGEMENT
+         ========================================================================== -->
+    <section class="section-wrapper">
+      <div class="container">
+        
+        <div class="community-grid">
+          
+          <!-- Left: Verified User Reviews -->
+          <div>
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+              <div>
+                <div class="section-tagline tertiary">VERIFIED AGENT TELEMETRY</div>
+                <h2 class="section-title" style="font-size: 1.85rem;">The Vault Feed</h2>
+              </div>
+              <span class="badge-caps badge-outline">RATED 4.9/5 ACROSS 18,000+ DISPATCHES</span>
+            </div>
+
+            <div class="review-list">
+              
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="review-user-group">
+                    <div class="review-avatar-initials cyan">MV</div>
+                    <div>
+                      <span class="review-user-name">Marcus Vance</span>
+                      <span class="review-user-rank" style="color: var(--primary-light);">LVL 62 • OMNIPASS VIP</span>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-body">
+                  "Got the Wolverine pre-order bundle with the zero issue comic. Read it on my phone during my commute, and the key was ready on my console the moment I walked through the door. Flawless service."
+                </p>
+              </div>
+
+              <div class="review-card">
+                <div class="review-header">
+                  <div class="review-user-group">
+                    <div class="review-avatar-initials crimson">TL</div>
+                    <div>
+                      <span class="review-user-name">Tasha Lin</span>
+                      <span class="review-user-rank" style="color: var(--secondary);">COMIC COLLECTOR</span>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-body">
+                  "The laser-etched comic PS5 faceplates are genuinely artistic. Packaging was bulletproof, and the numbered card adds serious collector clout."
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Interactive Community Telemetry Poll -->
+          <div class="poll-container">
+            <div>
+              <div class="poll-header-strip">
+                <span class="badge-caps badge-secondary">COMMUNITY TELEMETRY POLL</span>
+                <span class="badge-caps badge-outline">CLOSES IN 48H</span>
+              </div>
+              <h3 style="font-size: 1.25rem;">Which Comic Arc Deserves a AAA PS5 Game Next?</h3>
+              <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Cast your vote to earn 100 OmniVerse points towards your next digital issue.
+              </p>
+
+              <div class="poll-option-list">
+                
+                <div class="poll-option-row" data-poll-key="berserk">
+                  <div class="poll-fill-bar" style="width: 48%;"></div>
+                  <span class="poll-text">Berserk: The Golden Age (Action RPG)</span>
+                  <span class="poll-percent">48%</span>
+                </div>
+
+                <div class="poll-option-row" data-poll-key="tokyo">
+                  <div class="poll-fill-bar" style="width: 26%;"></div>
+                  <span class="poll-text">Tokyo Ghoul: Investigator Files (Stealth)</span>
+                  <span class="poll-percent">26%</span>
+                </div>
+
+                <div class="poll-option-row" data-poll-key="saga">
+                  <div class="poll-fill-bar" style="width: 16%;"></div>
+                  <span class="poll-text">Saga: Outer Orbit Exploration</span>
+                  <span class="poll-percent">16%</span>
+                </div>
+
+                <div class="poll-option-row" data-poll-key="spawn">
+                  <div class="poll-fill-bar" style="width: 10%;"></div>
+                  <span class="poll-text">Spawn: Hellfire Reclamation</span>
+                  <span class="poll-percent">10%</span>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="poll-footer-meta">
+              <span>Total Votes Cast: <strong id="totalVotesCount" style="color: #fff;">14,892</strong></span>
+              <span style="color: var(--tertiary); display: flex; align-items: center; gap: 0.25rem;">
+                <span class="material-symbols-outlined" style="font-size: 0.95rem;">lock_open</span> Points Unlocked Upon Vote
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <div>
+          <span class="badge-caps badge-secondary">TRANSMISSION INCOMING</span>
+          <h4 style="font-size: 1.5rem; margin-top: 0.5rem;">Join The OmniCore Network</h4>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.5rem; max-width: 24rem;">
+            Subscribe to release telemetry for instant variant cover alerts, PS5 restocks, and claim 15% off your first graphic novel or controller order.
+          </p>
+
+          <form class="newsletter-box" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="agent@omnicore.net" required aria-label="Email address">
+            <button type="submit" class="newsletter-btn">Redeem 15%</button>
+          </form>
+        </div>
+
+        <div class="footer-links-grid">
+          <div>
+            <h5 class="footer-col-title">Vault Sectors</h5>
+            <ul class="footer-list">
+              <li><a href="#comics">Digital Manga Shelf</a></li>
+              <li><a href="#comics">Variant Cover Editions</a></li>
+              <li><a href="#gear">DualSense™ Edge Mods</a></li>
+              <li><a href="#gear">Pulse Elite™ Headsets</a></li>
+              <li><a href="#bundles">Collector Art Books</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Omni Support</h5>
+            <ul class="footer-list">
+              <li><a href="#">Order Telemetry & Tracking</a></li>
+              <li><a href="#">Hardware 2-Year Warranty</a></li>
+              <li><a href="#">Comic Reader App APK</a></li>
+              <li><a href="#">Cloud Sync FAQ</a></li>
+              <li><a href="#">Trade-In Protocol</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">PlayStation Partner</h5>
+            <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.6;">
+              Authorized distributor of Sony Interactive Entertainment hardware, accessories, and official licensed graphic tie-ins.
+            </p>
+            <div style="display: flex; gap: 0.75rem; color: var(--text-secondary); margin-top: 1rem;">
+              <span class="material-symbols-outlined" style="font-size: 1.75rem;">sports_esports</span>
+              <span class="material-symbols-outlined" style="font-size: 1.75rem;">menu_book</span>
+              <span class="material-symbols-outlined" style="font-size: 1.75rem;">verified_user</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-legal-links">
+          <span style="font-family: var(--font-display); font-weight: 700; color: #fff;">© 2025 OMNIVERSE INC. ALL SECTORS RESERVED.</span>
+          <a href="#">Privacy Architecture</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security Disclosures</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span class="badge-caps" style="color: var(--tertiary); padding: 0;">SYSTEM OPERATIONAL // 60 FPS SYNC</span>
+          <div style="display: flex; gap: 0.5rem; color: var(--text-secondary);">
+            <a href="#" aria-label="Forum"><span class="material-symbols-outlined">forum</span></a>
+            <a href="#" aria-label="RSS"><span class="material-symbols-outlined">rss_feed</span></a>
+            <a href="#" aria-label="Support"><span class="material-symbols-outlined">headset_mic</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CART DOCK DRAWER & OVERLAY
+       ========================================================================== -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Dock Drawer">
+    <div class="cart-header">
+      <h3 class="cart-title">
+        <span class="material-symbols-outlined" style="color: var(--primary-light);">sports_esports</span> Console Dock
+      </h3>
+      <button class="btn-icon" id="closeCartBtn" aria-label="Close cart">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-items-list" id="cartItemsList"></div>
+
+    <!-- Cart Footer with Shipping Tracker & Checkout -->
+    <div class="cart-footer">
+      <div class="shipping-progress-box">
+        <div class="shipping-text" id="shippingProgressText">
+          Armored shipping progress
+        </div>
+        <div class="shipping-bar-bg">
+          <div class="shipping-bar-fill" id="shippingProgressBar"></div>
+        </div>
+      </div>
+
+      <!-- Promo code input -->
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <input type="text" id="promoCodeInput" placeholder="PROMO CODE (TRY: OMNI15)" style="flex: 1; background: var(--surface-card); border: 1px solid var(--border-mid); color: #fff; padding: 0.5rem 0.75rem; border-radius: var(--radius-xs); font-size: 0.75rem; text-transform: uppercase;">
+        <button id="applyPromoBtn" class="btn btn-ghost" style="padding: 0.5rem 0.75rem; font-size: 0.75rem;">APPLY</button>
+      </div>
+
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-row" id="cartDiscountRow" style="display: none; color: var(--success);">
+        <span>VIP Promo Discount (15%)</span>
+        <span id="cartDiscount">-$0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Key Telemetry Delivery</span>
+        <span style="color: var(--success); font-weight: 700;">FREE (0.0s PSN Sync)</span>
+      </div>
+
+      <div class="cart-total-row">
+        <span>Station Total</span>
+        <span id="cartTotal" style="color: var(--primary-light);">$0.00</span>
+      </div>
+
+      <button class="btn btn-primary" id="checkoutBtn" style="width: 100%; padding: 0.85rem; font-size: 0.95rem;">
+        <span class="material-symbols-outlined">bolt</span> Proceed to Console Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       INTERACTIVE COMIC READER MODAL
+       ========================================================================== -->
+  <div class="reader-modal-overlay" id="readerModalOverlay">
+    <div class="reader-modal-content">
+      <div class="reader-modal-header">
+        <div class="reader-comic-title">
+          <span class="material-symbols-outlined" style="color: var(--primary-light);">auto_stories</span>
+          <span id="readerComicTitle">Neon Ronin: Zero Hour #01</span>
+        </div>
+        <button class="btn-icon" id="closeReaderBtn" aria-label="Close comic reader">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="reader-canvas-area">
+        <img src="" alt="Comic Page Preview" class="reader-page-img" id="readerPageImg">
+      </div>
+
+      <div class="reader-modal-footer">
+        <button class="btn btn-ghost" id="prevPageBtn">
+          <span class="material-symbols-outlined">chevron_left</span> Previous
+        </button>
+        <span class="reader-page-counter" id="readerPageCounter">PAGE 1 OF 5</span>
+        <button class="btn btn-primary" id="nextPageBtn">
+          Next <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
