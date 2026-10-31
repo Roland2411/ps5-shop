@@ -346,9 +346,17 @@ input, select, textarea {
 }
 
 .brand-logo-img {
-  height: 2rem;
-  width: auto;
-  object-fit: contain;
+  height: 2.75rem;
+  width: 2.75rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(0, 112, 209, 0.45);
+  transition: transform var(--speed-normal), box-shadow var(--speed-normal);
+}
+
+.brand-wrap:hover .brand-logo-img {
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(0, 112, 209, 0.75);
 }
 
 .brand-text {
